@@ -90,7 +90,7 @@ function getQualitys(musicItem, isVideo) {
 const source = "";// 请在其他项目寻找
 async function getMediaSource(musicItem, quality) {
     const rid = musicItem.MUSICRID ? musicItem.MUSICRID.split('_')[1].split('&')[0] : (musicItem.rid || musicItem.id);
-    const url = 'https://nmobi.kuwo.cn/mobi.s?f=web&type=convert_url_with_sign&source=' + source + '&br=' + quality.br + '&rid=' + rid;
+    const url = 'https://nmobi.kuwo.cn/mobi.s?f=web&type=convert_url_with_sign&user=0&source=' + source + '&br=' + quality.br + '&rid=' + rid;
     try {
         const response = await fetch(url);
         const data = await response.json();
