@@ -25,7 +25,7 @@ async function getMusicInfo(urlLike) {
     if (!rid) {
         return false;
     }
-    const response = await fetch('http://musicpay.kuwo.cn/music.pay?op=query&action=play&ids=' + rid);
+    const response = await fetch('http://datacenter.kuwo.cn/d.c?cmkey=plist_pl2012&ft=music&resenc=utf8&ids=' + rid);
     const data = await response.json();
     return data.songs[0];
 }
